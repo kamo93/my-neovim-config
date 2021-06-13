@@ -21,18 +21,29 @@ set incsearch " incremental search that show partial matches
 set smartcase
 set shortmess-=S
 set noshowmode " hide --INSERT-- 
-
+set tabstop=2 softtabstop=2
+set smarttab
+set nowrap
+set scrolloff=16
+set noswapfile
+set nobackup
+exec 'set undodir='.stdpath('config').'/undodir'
+set undofile
 " plugin manager
 call plug#begin('~/.config/nvim/plugged')
 	Plug 'joshdick/onedark.vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
+	Plug 'tpope/vim-surround'
+	Plug 'terryma/vim-multiple-cursors'
+	Plug 'mbbill/undotree'
 call plug#end()
 
 " mapleader to space
 let mapleader = " "
 
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader> <Nop>
 nnoremap <Leader>l :action NextTab<CR>
 nnoremap <Leader>h :action PreviousTab<CR>

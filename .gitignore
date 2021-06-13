@@ -20,3 +20,6 @@ tags
 
 #plugins
 plugged/*
+
+#undotree
+undodir/*
