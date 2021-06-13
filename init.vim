@@ -24,9 +24,10 @@ set noshowmode " hide --INSERT--
 
 " plugin manager
 call plug#begin('~/.config/nvim/plugged')
-Plug 'joshdick/onedark.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'itchyny/lightline.vim'
+	Plug 'joshdick/onedark.vim'
+	Plug 'tpope/vim-fugitive'
+	Plug 'itchyny/lightline.vim'
+	Plug 'preservim/nerdtree'
 call plug#end()
 
 " mapleader to space
@@ -41,6 +42,9 @@ nnoremap <Leader>c yiwoconsole.log('<esc>pla,<esc>p
 " Quickly insert an empty new line without entering insert mode
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
+
+" remap nerdtree
+nnoremap <Leader>n :NERDTreeFocus<CR>
 
 " one dark vim theme config
 let g:onedarf_termina_italics = 1
