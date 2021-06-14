@@ -29,6 +29,10 @@ set noswapfile
 set nobackup
 exec 'set undodir='.stdpath('config').'/undodir'
 set undofile
+set colorcolumn=80
+set spell
+set spelllang=en_us
+
 " plugin manager
 call plug#begin('~/.config/nvim/plugged')
 	Plug 'joshdick/onedark.vim'
@@ -55,11 +59,14 @@ nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
 
 " remap nerdtree
+let NERDTreeShowHidden=1
 nnoremap <Leader>n :NERDTreeFocus<CR>
 
 " one dark vim theme config
 let g:onedarf_termina_italics = 1
 colorscheme onedark
+" override color column
+highlight ColorColumn guibg=#A1A9B6
 if (has("nvim"))
 "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
 	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
