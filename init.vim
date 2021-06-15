@@ -42,6 +42,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'mbbill/undotree'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/nvim-compe'
 call plug#end()
 
 " mapleader to space
@@ -88,3 +90,6 @@ let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
 " end lightline config
+
+" LSP configuration
+source ~/.config/nvim/LSP/lsp-config.vim
