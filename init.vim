@@ -92,4 +92,8 @@ let g:lightline = {
 " end lightline config
 
 " LSP configuration
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
 source ~/.config/nvim/LSP/lsp-config.vim
+source ~/.config/nvim/LSP/compe-config.lua
