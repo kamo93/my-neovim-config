@@ -10,11 +10,11 @@ require'compe'.setup {
   max_abbr_width = 100;
   max_kind_width = 100;
   max_menu_width = 100;
-  documentation = true;
+  documentation = false;
 
   source = {
     path = true;
-    buffer = { priority= 1000; };
+    buffer = true;
     calc = true;
     vsnip = true;
     nvim_lsp = true;
@@ -29,7 +29,6 @@ require'compe'.setup {
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
-
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
@@ -42,4 +41,4 @@ end
 
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})a
