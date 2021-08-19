@@ -49,6 +49,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'mbbill/undotree'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'alvan/vim-closetag'
+	Plug 'preservim/nerdcommenter'
 
 " git 
 	Plug 'tpope/vim-fugitive'
@@ -69,6 +70,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Javascript
 	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'yuezk/vim-js'
+	Plug 'dense-analysis/ale'
 call plug#end()
 
 " vim'gitguitter configure
@@ -113,15 +115,24 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 
-syntax on
-colorscheme gruvbox
-
 " lightline config
 if !has('gui_running')
 	set t_Co=256
 endif
 
-let g:lightline = { 'colorscheme': 'gruvbox', }
+let g:lightline = { 
+  \ 'colorscheme': 'gruvbox',
+  \ 'active': {
+  \  'left': [ ['mode', 'paste'] ,
+  \            [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \  'gitbranch': 'FugitiveHead'
+  \ },
+  \ }
+
+syntax on
+colorscheme gruvbox
 " end lightline config
 let g:gruvbox_invert_selection = '0'
 let g:gruvbox_contrast_dark    = 'hard'
