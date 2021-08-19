@@ -3,7 +3,6 @@ filetype off
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
-
 " my set config
 set nocompatible
 set number
@@ -41,7 +40,7 @@ set signcolumn=yes
  
 " plugin manager
 call plug#begin('~/.config/nvim/plugged')
-" general plugins
+	" general plugins
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-surround'
@@ -51,23 +50,23 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'alvan/vim-closetag'
 	Plug 'preservim/nerdcommenter'
 
-" git 
+	" git 
 	Plug 'tpope/vim-fugitive'
 	Plug 'airblade/vim-gitgutter'
 
-" Neovim LSP
+	" Neovim LSP
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-lua/completion-nvim'
 
-" Telescope
+	" Telescope
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim' 
 
-" color theme
+	" color theme
 	Plug 'morhetz/gruvbox'
 
-" Javascript
+	" Javascript
 	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'yuezk/vim-js'
 	Plug 'dense-analysis/ale'
